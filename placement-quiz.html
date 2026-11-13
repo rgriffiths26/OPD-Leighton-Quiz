@@ -7,9 +7,10 @@
   <meta name="description" content="Outpatient placement scenarios for student nurses, informed by NHS and NMC guidance.">
   <title>Student Nurse Placement Quiz | Mid Cheshire Hospitals</title>
   <script src="theme.js"></script>
-  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="theme.css?v=reflection">
   <script defer src="placement-quiz-data.js"></script>
-  <script defer src="staff-quiz.js"></script>
+  <script defer src="celebration.js"></script>
+  <script defer src="staff-quiz.js?v=reflection"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -39,6 +40,12 @@
         <h2 id="result-title" tabindex="-1">Time to reflect</h2>
         <p id="result-score"></p>
         <p>Review the explanations and discuss any questions with your supervisor or educator. Use current local policies in practice.</p>
+        <section class="staff-reflection" aria-labelledby="reflection-title">
+          <h3 id="reflection-title">Debrief with your supervising nurse</h3>
+          <label for="reflection-notes" id="reflection-prompt"></label>
+          <textarea id="reflection-notes" rows="4" placeholder="Your thoughts — just for you. Nothing is sent or saved."></textarea>
+          <p>These notes are not saved, submitted or shared. Discuss your answer with your supervisor or educator if you wish.</p>
+        </section>
         <div class="staff-actions"><button class="btn" id="quiz-retry" type="button">Try again</button><a href="placement-quizzes.html">Choose another quiz &rarr;</a></div>
       </div>
       <aside class="staff-sources" aria-labelledby="sources-title"><h2 id="sources-title">Guidance to explore</h2><p>Explore the guidance behind these learning scenarios.</p><ul id="quiz-sources"></ul></aside>

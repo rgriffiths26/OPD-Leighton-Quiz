@@ -13,14 +13,23 @@
   let index = 0;
   let score = 0;
   let answered = false;
+  const quizIds = Object.keys(staffQuizzes);
+  const position = quizIds.indexOf(id) + 1;
   const panel = byId('quiz-panel');
   const options = byId('quiz-options');
   const next = byId('quiz-next');
   const feedback = byId('quiz-feedback');
+  const reflectionPrompt = byId('reflection-prompt');
+  const reflectionNotes = byId('reflection-notes');
 
   document.title = `${quiz.title} | ${document.title}`;
   byId('quiz-title').textContent = quiz.title;
   byId('quiz-intro').textContent = quiz.introduction;
+  if (reflectionPrompt && reflectionNotes) {
+    reflectionPrompt.textContent = `What is one thing from ${quiz.title} you would like to discuss with your supervisor or educator?`;
+  } else {
+    console.warn('Reflection notes are unavailable; reload the page to update it.');
+  }
   byId('quiz-progress').max = quiz.questions.length;
   for (const [label, url] of quiz.sources) {
     const item = document.createElement('li');
@@ -90,14 +99,23 @@
     } else {
       byId('quiz-screen').hidden = true;
       byId('quiz-result').hidden = false;
-      byId('result-score').textContent = `You chose ${score} of ${quiz.questions.length} suggested answers.`;
+      const completion = position === quizIds.length
+        ? `Congratulations! You’ve completed quiz ${position} of ${quizIds.length}.`
+        : `Quiz ${position} of ${quizIds.length} complete.`;
+      byId('result-score').textContent = `${completion} You chose ${score} of ${quiz.questions.length} suggested answers.`;
       byId('result-title').focus();
+      if (typeof window.celebrateQuizCompletion === 'function') {
+        window.celebrateQuizCompletion(position, quizIds.length);
+      } else {
+        console.warn('The quiz celebration could not be loaded.');
+      }
     }
   });
 
   byId('quiz-retry').addEventListener('click', () => {
     index = 0;
     score = 0;
+    if (reflectionNotes) reflectionNotes.value = '';
     byId('quiz-result').hidden = true;
     byId('quiz-screen').hidden = false;
     renderQuestion();

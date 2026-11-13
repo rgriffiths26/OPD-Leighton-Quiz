@@ -15,6 +15,7 @@ A static, GitHub Pages-compatible nursing quiz hub for careers exploration and o
 - `placement-quizzes.html` and `placement-quiz.html`: a separate collection of six student placement quizzes and their shareable links.
 - `staff-quiz-data.js` and `placement-quiz-data.js`: scenarios and source links for the respective collections.
 - `staff-quiz.js`: shared interaction for both collections.
+- `celebration.js`: short, accessible confetti celebrations based on a quiz's position in its collection.
 - `theme.css`: shared NHS blue, dark blue and pink styling inspired by the [Mid Cheshire Hospitals website](https://www.mcht.nhs.uk/).
 - `theme.js`: light/dark theme selection shared across pages.
 
@@ -28,10 +29,12 @@ Station links use `nursing.html?station=1` through `nursing.html?station=6`. Exi
 
 ## Adding a quiz
 
-For another quiz, add an entry with a unique ID, title, introduction, sources and questions to the relevant collection's data file. Add a card to `staff-quizzes.html` linking to `staff-quiz.html?quiz=ID`, or to `placement-quizzes.html` linking to `placement-quiz.html?quiz=ID`. Each question has four answers, a zero-based `correct` index and an explanation. The shared quiz interaction sets the question count from the data; update the relevant collection totals when adding questions.
+For another quiz, add an entry with a unique ID, title, introduction, sources and questions to the relevant collection's data file. Add a card in the same order to `staff-quizzes.html` linking to `staff-quiz.html?quiz=ID`, or to `placement-quizzes.html` linking to `placement-quiz.html?quiz=ID`. Each question has four answers, a zero-based `correct` index and an explanation. The shared quiz interaction sets the question count from the data; update the relevant collection totals when adding questions.
 
 The outpatient quizzes are intended for student nurses and cover placement skills as well as future nursing practice. They use England-specific NHS guidance alongside the UK-wide NMC Code. Sources are linked from each quiz; check current national guidance and Trust policies when maintaining the scenarios.
 
 To check quiz links and question data, run `node --test` with Node.js installed.
 
-Quiz answers, badges and reflection notes remain in memory only. Reloading or leaving the quiz resets them; no responses are stored or submitted. The light/dark theme defaults to the device setting and, when changed, is saved locally in the browser.
+Quiz answers, badges and reflection notes remain in memory only. All three quiz experiences include a reflection notes box; reloading, leaving or replaying a quiz clears its notes. No responses are stored or submitted. The light/dark theme defaults to the device setting and, when changed, is saved locally in the browser.
+
+Confetti grows with the quiz's numbered position, not completion history, and is omitted when the device requests reduced motion.

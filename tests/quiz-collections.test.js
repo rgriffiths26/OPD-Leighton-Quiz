@@ -24,7 +24,7 @@ test('each collection links to its own quizzes', () => {
     const links = [...html.matchAll(/href="([^"]+\.html)\?quiz=([^"]+)"/g)];
     assert.ok(links.length, `${collection.list} has no quiz links`);
     assert.ok(links.every(link => link[1] === collection.page), `${collection.list} links to another collection`);
-    assert.deepEqual(links.map(link => link[2]).sort(), Object.keys(quizzes).sort());
+    assert.deepEqual(links.map(link => link[2]), Object.keys(quizzes));
   }
 });
 

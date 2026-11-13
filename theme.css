@@ -144,6 +144,11 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 .staff-feedback.incorrect { border-color: #aa642d; background: #fff5e8; color: #49321d; }
 .staff-feedback h3 { font-size: 17px; margin: 0 0 5px; }
 .staff-feedback p { margin: 0; }
+.staff-reflection { margin-top: 24px; padding: 18px; border-radius: 9px; background: var(--sky); text-align: left; }
+.staff-reflection h3 { margin: 0 0 8px; font-size: 17px; }
+.staff-reflection label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: bold; }
+.staff-reflection textarea { display: block; width: 100%; min-height: 100px; padding: 12px; border: 1px solid #a9bfce; border-radius: 8px; background: var(--white); color: var(--ink); font: inherit; resize: vertical; }
+.staff-reflection p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
 .staff-actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 24px; }
 .staff-actions > span { color: var(--muted); font-size: 13px; }
 .staff-actions .btn:disabled { opacity: .5; cursor: not-allowed; }
@@ -151,6 +156,14 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 .staff-sources h2 { font-size: 18px; margin: 0 0 6px; }
 .staff-sources p, .staff-sources ul { font-size: 14px; }
 .staff-sources li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.confetti-layer { position: fixed; inset: 0; z-index: 100; overflow: hidden; pointer-events: none; }
+.confetti-piece { position: absolute; width: 7px; height: 12px; border-radius: 2px; opacity: 0; animation: confetti-fall 2.4s ease-out var(--confetti-delay) forwards; }
+.confetti-piece:nth-child(3n) { width: 9px; height: 9px; border-radius: 50%; }
+@keyframes confetti-fall {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg) scale(.5); }
+  10%, 70% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(var(--confetti-x), var(--confetti-y), 0) rotate(var(--confetti-rotation)); }
+}
 
 /* Keep the original learning experience in the shared Trust colour palette. */
 .quiz-breadcrumb { max-width: 1060px; margin: auto; padding: 12px 24px; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; }
@@ -263,6 +276,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 [data-theme="dark"] .staff-option.incorrect { background: #60313b; border-color: #ffabb7; }
 [data-theme="dark"] .staff-feedback { background: #194b3d; color: #edf4fa; border-color: #87d8ae; }
 [data-theme="dark"] .staff-feedback.incorrect { background: #463822; color: #fff1d2; border-color: #f0c484; }
+[data-theme="dark"] .staff-reflection textarea { background: #101c2a; color: #edf4fa; border-color: #91aaba; }
 
 @media (max-width: 1100px) {
   .site-header .inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; }
@@ -307,9 +321,10 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  .confetti-layer { display: none; }
 }
 @media print {
-  .site-header, .site-nav, .quiz-breadcrumb, .skip-link, .hub-footer, .hero-button { display: none !important; }
+  .site-header, .site-nav, .quiz-breadcrumb, .skip-link, .hub-footer, .hero-button, .confetti-layer { display: none !important; }
   .hub-hero, .hero-note { background: white; color: black; }
   .hub-hero p, .hub-hero .eyebrow, .hero-note p, .note-label { color: black; }
   [data-theme="dark"] body, [data-theme="dark"] .module, [data-theme="dark"] .insight, [data-theme="dark"] .scenario, [data-theme="dark"] .reflection, [data-theme="dark"] .stretch { background: white; color: black; }
