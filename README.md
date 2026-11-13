@@ -1,6 +1,6 @@
 # OPD-Leighton-Quiz
 
-A static, GitHub Pages-compatible careers quiz collection.
+A static, GitHub Pages-compatible nursing quiz hub for careers exploration and outpatient learning.
 
 ## Scan to open the quiz hub
 
@@ -11,8 +11,10 @@ A static, GitHub Pages-compatible careers quiz collection.
 - `index.html`: quiz-selection homepage.
 - `nursing.html`: the original Nursing Shift Challenge, with all six stations and 30 questions.
 - `staff-quizzes.html`: Outpatient Nursing Essentials collection page.
-- `staff-quiz.html`: six outpatient nursing quizzes, each with a separate shareable link.
-- `staff-quiz-data.js` and `staff-quiz.js`: quiz scenarios, source links and shared interaction.
+- `staff-quiz.html`: six outpatient nursing essentials quizzes, each with a separate shareable link.
+- `placement-quizzes.html` and `placement-quiz.html`: a separate collection of six student placement quizzes and their shareable links.
+- `staff-quiz-data.js` and `placement-quiz-data.js`: scenarios and source links for the respective collections.
+- `staff-quiz.js`: shared interaction for both collections.
 - `theme.css`: shared NHS blue, dark blue and pink styling inspired by the [Mid Cheshire Hospitals website](https://www.mcht.nhs.uk/).
 - `theme.js`: light/dark theme selection shared across pages.
 
@@ -26,8 +28,10 @@ Station links use `nursing.html?station=1` through `nursing.html?station=6`. Exi
 
 ## Adding a quiz
 
-For another outpatient nursing quiz, add an entry to `staff-quiz-data.js` with a unique ID, title, introduction, sources and questions. Add a card to `staff-quizzes.html` linking to `staff-quiz.html?quiz=ID`. Each question has four answers, a zero-based `correct` index and an explanation. The shared quiz page sets its question count from the data; update the collection totals when adding questions.
+For another quiz, add an entry with a unique ID, title, introduction, sources and questions to the relevant collection's data file. Add a card to `staff-quizzes.html` linking to `staff-quiz.html?quiz=ID`, or to `placement-quizzes.html` linking to `placement-quiz.html?quiz=ID`. Each question has four answers, a zero-based `correct` index and an explanation. The shared quiz interaction sets the question count from the data; update the relevant collection totals when adding questions.
 
-The outpatient quizzes are intended for student nurses and use England-specific NHS guidance alongside the UK-wide NMC Code. Sources are linked from each quiz; check current national guidance and Trust policies when maintaining the scenarios.
+The outpatient quizzes are intended for student nurses and cover placement skills as well as future nursing practice. They use England-specific NHS guidance alongside the UK-wide NMC Code. Sources are linked from each quiz; check current national guidance and Trust policies when maintaining the scenarios.
+
+To check quiz links and question data, run `node --test` with Node.js installed.
 
 Quiz answers, badges and reflection notes remain in memory only. Reloading or leaving the quiz resets them; no responses are stored or submitted. The light/dark theme defaults to the device setting and, when changed, is saved locally in the browser.

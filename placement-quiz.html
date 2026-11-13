@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#005eb8">
+  <meta name="description" content="Outpatient placement scenarios for student nurses, informed by NHS and NMC guidance.">
+  <title>Student Nurse Placement Quiz | Mid Cheshire Hospitals</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="theme.css">
+  <script defer src="placement-quiz-data.js"></script>
+  <script defer src="staff-quiz.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="inner">
+    <a class="trust-logo" href="index.html" aria-label="Quiz hub home"><img src="https://www.mcht.nhs.uk/application/files/9216/4493/8161/Mid_Cheshire_Hospitals_Logo.svg" width="644" height="203" alt="Mid Cheshire Hospitals NHS Foundation Trust"></a>
+    <nav class="site-nav" aria-label="Main navigation"><div class="nav-inner"><a href="index.html">All quizzes</a><a href="nursing.html">The Nursing Shift Challenge</a><a href="staff-quizzes.html">Outpatient Nursing Essentials</a><a href="placement-quizzes.html" aria-current="page">Student Placement</a></div></nav>
+    <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
+  </div></header>
+  <main class="staff-quiz-main" id="main">
+    <a class="staff-back" href="placement-quizzes.html">&larr; Back to student placement quizzes</a>
+    <div class="clinical-note"><strong>Learning scenarios.</strong> For discussion only; not clinical guidance or a competency assessment. In practice, follow local procedures, work within your competence and seek guidance from your supervisor.</div>
+    <noscript><p class="clinical-note">JavaScript is required to use these quizzes. Enable JavaScript and reload the page.</p></noscript>
+    <section class="staff-quiz-panel" id="quiz-panel" hidden aria-labelledby="quiz-title">
+      <p class="staff-kicker">Student nurses &middot; NHS England</p>
+      <h1 id="quiz-title"></h1>
+      <p class="staff-intro" id="quiz-intro"></p>
+      <div id="quiz-screen">
+        <div class="staff-progress"><strong id="question-count"></strong><span id="score"></span></div>
+        <progress id="quiz-progress" max="5" value="0" aria-label="Questions answered"></progress>
+        <h2 id="quiz-question" tabindex="-1"></h2>
+        <div class="staff-options" id="quiz-options" aria-label="Answer choices"></div>
+        <div class="staff-feedback" id="quiz-feedback" role="status" hidden><h3 id="feedback-title"></h3><p id="feedback-text"></p></div>
+        <div class="staff-actions"><span>Answers and scores are not saved or sent.</span><button class="btn" id="quiz-next" type="button" disabled>Next question &rarr;</button></div>
+      </div>
+      <div id="quiz-result" class="staff-result" hidden>
+        <p class="staff-kicker">Quiz complete</p>
+        <h2 id="result-title" tabindex="-1">Time to reflect</h2>
+        <p id="result-score"></p>
+        <p>Review the explanations and discuss any questions with your supervisor or educator. Use current local policies in practice.</p>
+        <div class="staff-actions"><button class="btn" id="quiz-retry" type="button">Try again</button><a href="placement-quizzes.html">Choose another quiz &rarr;</a></div>
+      </div>
+      <aside class="staff-sources" aria-labelledby="sources-title"><h2 id="sources-title">Guidance to explore</h2><p>Explore the guidance behind these learning scenarios.</p><ul id="quiz-sources"></ul></aside>
+    </section>
+    <section class="staff-quiz-panel" id="quiz-error" hidden aria-labelledby="error-title"><h1 id="error-title">Quiz not found</h1><p>Choose an available quiz from the collection.</p><a href="placement-quizzes.html">Back to student placement quizzes</a></section>
+  </main>
+  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
+</body>
+</html>

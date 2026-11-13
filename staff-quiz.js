@@ -18,7 +18,7 @@
   const next = byId('quiz-next');
   const feedback = byId('quiz-feedback');
 
-  document.title = `${quiz.title} | Outpatient Nursing Quiz`;
+  document.title = `${quiz.title} | ${document.title}`;
   byId('quiz-title').textContent = quiz.title;
   byId('quiz-intro').textContent = quiz.introduction;
   byId('quiz-progress').max = quiz.questions.length;
