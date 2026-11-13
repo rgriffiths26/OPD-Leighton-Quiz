@@ -33,10 +33,10 @@ const staffQuizzes = {
         explanation: 'A clear handover communicates relevant concerns, actions and responsibility while protecting confidentiality.'
       },
       {
-        question: 'A task has been delegated to a colleague who tells you they have not been trained to do it. What should you do?',
-        answers: ['Insist they do it because the clinic is busy', 'Reconsider the delegation, arrange appropriate support and involve a suitable competent colleague', 'Assume training is unnecessary for routine tasks', 'Leave the task without telling anyone'],
+        question: 'A task has been delegated to you, but you have not been trained to do it. What should you do?',
+        answers: ['Carry it out anyway because the clinic is busy', 'Explain your training needs to your supervisor and seek appropriate support before proceeding', 'Assume training is unnecessary for routine tasks', 'Leave the task without telling anyone'],
         correct: 1,
-        explanation: 'Delegation requires consideration of competence, support and supervision. Ask for help when the team cannot safely meet a need.'
+        explanation: 'Be open about your competence and seek appropriate support and supervision. Do not undertake a task you are not prepared to perform safely.'
       }
     ]
   },
@@ -62,7 +62,7 @@ const staffQuizzes = {
       },
       {
         question: 'Your observations have not produced a high early warning score, but you remain worried about the patient. What should guide your next step?',
-        answers: ['The score always overrides clinical concern', 'Do nothing until the score increases', 'Ask the patient to leave without review', 'Escalate your concern using clinical judgement and the local policy, even if the score is low'],
+        answers: ['The score always overrides clinical concern', 'Do nothing until the score increases', 'Ask the patient to leave without review', 'Escalate your concern to your supervisor or appropriate clinician using local policy, even if the score is low'],
         correct: 3,
         explanation: 'An early warning score supports, but does not replace, clinical judgement. Escalate when you are concerned, regardless of the score.'
       },
@@ -214,7 +214,7 @@ const staffQuizzes = {
         explanation: 'Do not guess. Clarify unclear or incomplete instructions using the appropriate clinician and local medicines policy before proceeding.'
       },
       {
-        question: 'Before administering a medicine, you notice a potential discrepancy in the patient’s allergy information. What should you do?',
+        question: 'While preparing to administer a medicine with your supervisor, you notice a potential discrepancy in the patient’s allergy information. What should you do?',
         answers: ['Ignore it if the clinic is busy', 'Pause and clarify the discrepancy with the appropriate clinician and patient, following local policy', 'Assume the allergy is no longer relevant', 'Remove the allergy from the record without checking'],
         correct: 1,
         explanation: 'A possible allergy discrepancy must be checked and resolved through the correct process before administration.'

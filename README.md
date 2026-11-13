@@ -28,6 +28,6 @@ Station links use `nursing.html?station=1` through `nursing.html?station=6`. Exi
 
 For another outpatient nursing quiz, add an entry to `staff-quiz-data.js` with a unique ID, title, introduction, sources and questions. Add a card to `staff-quizzes.html` linking to `staff-quiz.html?quiz=ID`. Each question has four answers, a zero-based `correct` index and an explanation. The shared quiz page sets its question count from the data; update the collection totals when adding questions.
 
-The staff quizzes use England-specific NHS guidance alongside the UK-wide NMC Code. Sources are linked from each quiz; check current national guidance and Trust policies when maintaining the scenarios.
+The outpatient quizzes are intended for student nurses and use England-specific NHS guidance alongside the UK-wide NMC Code. Sources are linked from each quiz; check current national guidance and Trust policies when maintaining the scenarios.
 
 Quiz answers, badges and reflection notes remain in memory only. Reloading or leaving the quiz resets them; no responses are stored or submitted. The light/dark theme defaults to the device setting and, when changed, is saved locally in the browser.
