@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#005eb8">
-  <meta name="description" content="Explore hospital careers with interactive quizzes for supervised careers visits at Mid Cheshire Hospitals. Choose a quiz and discover what happens behind the scenes.">
-  <title>Careers Quiz Hub | Mid Cheshire Hospitals</title>
+  <meta name="description" content="Explore hospital careers and outpatient nursing with interactive quizzes inspired by NHS and NMC guidance.">
+  <title>Quiz Hub | Mid Cheshire Hospitals</title>
   <script src="theme.js"></script>
   <link rel="stylesheet" href="theme.css">
   <script>
@@ -23,27 +23,27 @@
   <header class="site-header">
     <div class="inner">
       <a class="trust-logo" href="index.html" aria-label="Quiz hub home"><img src="https://www.mcht.nhs.uk/application/files/9216/4493/8161/Mid_Cheshire_Hospitals_Logo.svg" width="644" height="203" alt="Mid Cheshire Hospitals NHS Foundation Trust"></a>
-      <div class="site-label">Explore. Think. Discover.<span>Careers quiz hub</span></div>
+      <div class="site-label">Explore. Think. Discover.<span>Quiz hub</span></div>
       <button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button>
     </div>
   </header>
   <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner"><a href="index.html" aria-current="page">All quizzes</a><a href="nursing.html">The Nursing Shift Challenge</a></div>
+    <div class="nav-inner"><a href="index.html" aria-current="page">All quizzes</a><a href="nursing.html">The Nursing Shift Challenge</a><a href="staff-quizzes.html">Outpatient Nursing Essentials</a></div>
   </nav>
   <main id="main">
     <section class="hub-hero">
       <div class="hub-hero-inner">
         <div>
-          <p class="eyebrow">Mid Cheshire Hospitals &middot; Careers exploration</p>
+          <p class="eyebrow">Mid Cheshire Hospitals &middot; Careers and learning</p>
           <h1>A little curiosity.<br>A whole world of care.</h1>
-          <p class="hero-copy">Step behind the scenes of hospital life. Explore the roles, think through real-world situations and discover where your skills could take you.</p>
+          <p class="hero-copy">Step behind the scenes of hospital life. Explore nursing careers or practise thinking through outpatient scenarios.</p>
           <a class="btn hero-button" href="#quizzes">Find your quiz <span aria-hidden="true">&darr;</span></a>
         </div>
         <aside class="hero-note" aria-label="How the quizzes work">
           <span class="heart-icon" aria-hidden="true"></span>
           <span class="note-label">Your next discovery</span>
-          <h2>Not an exam.<br>A new perspective.</h2>
-          <p>No clinical experience needed. Just bring your curiosity and see what you discover.</p>
+          <h2>Learn at your own pace.</h2>
+          <p>Explore careers or put your outpatient nursing knowledge to the test.</p>
           <div class="note-bottom"><span>No log-in</span><span>No pass or fail</span></div>
         </aside>
       </div>
@@ -68,11 +68,24 @@
             <a class="btn" href="nursing.html">Explore the nursing quiz <span aria-hidden="true">&rarr;</span></a>
           </div>
         </article>
-        <aside class="future-note"><span class="heart-icon" aria-hidden="true"></span><div><h3>Room for more discoveries</h3><p>This is the first quiz in the collection. Future quizzes will appear here, each with its own page and challenges.</p></div></aside>
+        <article class="quiz-card" id="staff-quizzes">
+          <div class="quiz-art staff-collection-art" aria-hidden="true">
+            <span class="quiz-index">QUIZ / 02</span>
+            <svg viewBox="0 0 160 160" fill="none"><path d="M80 132S26 102 26 65c0-15 10-25 24-25 14 0 23 10 30 20 7-10 16-20 30-20 14 0 24 10 24 25 0 37-54 67-54 67Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M45 84h17l8-17 13 32 9-21 6 6h17" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Outpatient Nursing</span>
+          </div>
+          <div class="quiz-card-body">
+            <span class="available">For newly qualified nurses</span>
+            <h3>Outpatient Nursing Essentials</h3>
+            <p>Explore six outpatient nursing topics, from running a busy clinic to patient safety, communication and medicines.</p>
+            <ul class="quiz-facts" aria-label="Quiz details"><li>6 topics</li><li>30 scenarios</li><li>NHS England</li></ul>
+            <a class="btn" href="staff-quizzes.html">Explore outpatient essentials <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
       </div>
       <section class="visit-note" aria-labelledby="visit-title"><h2 id="visit-title">Here for a supervised visit?</h2><p>Stay with your nominated supervisor and use approved areas only. These fictional learning scenarios are for careers exploration, not clinical guidance. Do not access patient information, photograph clinical areas or undertake patient care.</p></section>
     </section>
   </main>
-  <footer class="hub-footer"><div><strong>Careers quiz hub</strong><p>For supervised hospital careers visits. No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
+  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
 </body>
 </html>
