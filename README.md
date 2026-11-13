@@ -2,9 +2,16 @@
 
 A static, GitHub Pages-compatible careers quiz collection.
 
+## Scan to open the quiz hub
+
+![QR code for the careers quiz homepage](homepage-qr.svg)
+
+[Open the quiz hub](https://rgriffiths26.github.io/OPD-Leighton-Quiz/)
+
 - `index.html`: quiz-selection homepage.
 - `nursing.html`: the original Nursing Shift Challenge, with all six stations and 30 questions.
 - `theme.css`: shared NHS blue, dark blue and pink styling inspired by the [Mid Cheshire Hospitals website](https://www.mcht.nhs.uk/).
+- `theme.js`: light/dark theme selection shared across pages.
 
 The header displays the Trust's existing combined NHS / Mid Cheshire Hospitals logo directly from its website. Decorative heart artwork also uses the Trust website's existing banner assets. These images require an internet connection; all text and quiz controls remain usable without them. Branding does not replace local work-experience approval.
 
@@ -18,4 +25,4 @@ Station links use `nursing.html?station=1` through `nursing.html?station=6`. Exi
 
 Create another HTML page alongside `nursing.html`, link `theme.css`, and add a quiz card with a relative link to it in the homepage's `.quiz-list`. Use the same header and a link back to `index.html`. Replace the "Room for more discoveries" note when further quizzes are available; it is not an inactive quiz button.
 
-Quiz answers, badges and reflection notes remain in memory only. Reloading or leaving the quiz resets them; no responses are stored or submitted.
+Quiz answers, badges and reflection notes remain in memory only. Reloading or leaving the quiz resets them; no responses are stored or submitted. The light/dark theme defaults to the device setting and, when changed, is saved locally in the browser.
