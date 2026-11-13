@@ -7,7 +7,8 @@
   <meta name="description" content="Explore hospital careers and outpatient nursing with interactive quizzes inspired by NHS and NMC guidance.">
   <title>Quiz Hub | Mid Cheshire Hospitals</title>
   <script src="theme.js"></script>
-  <link rel="stylesheet" href="theme.css">
+  <script src="progress.js?v=progress-v2"></script>
+  <link rel="stylesheet" href="theme.css?v=progress-v2">
   <script>
     const station = Number(new URLSearchParams(location.search).get('station'));
     if (Number.isInteger(station) && station >= 1 && station <= 6) {
@@ -52,6 +53,7 @@
         <div><p class="eyebrow">Choose your starting point</p><h2 id="quizzes-title">Find your next challenge</h2></div>
         <p>Go at your own pace. Learn as you play.</p>
       </div>
+      <section class="progress-panel" data-progress-panel aria-label="Your quiz progress" hidden></section>
       <div class="quiz-list">
         <article class="quiz-card">
           <div class="quiz-art" aria-hidden="true">
@@ -64,6 +66,7 @@
             <h3>The Nursing Shift Challenge</h3>
             <p>Discover what nurses do when a clinic gets busy, patients have questions and plans change.</p>
             <ul class="quiz-facts" aria-label="Quiz details"><li>6 stations</li><li>30 decisions</li><li>Ages 16&ndash;18</li></ul>
+            <p class="progress-summary" data-progress-summary="nursing" hidden></p>
             <a class="btn" href="nursing.html">Explore the nursing quiz <span aria-hidden="true">&rarr;</span></a>
           </div>
         </article>
@@ -78,6 +81,7 @@
             <h3>Outpatient Nursing Essentials</h3>
             <p>Explore clinic priorities, patient safety, communication and medicines.</p>
             <ul class="quiz-facts" aria-label="Quiz details"><li>6 topics</li><li>30 scenarios</li><li>NHS England</li></ul>
+            <p class="progress-summary" data-progress-summary="staff" hidden></p>
             <a class="btn" href="staff-quizzes.html">Explore outpatient essentials <span aria-hidden="true">&rarr;</span></a>
           </div>
         </article>
@@ -92,6 +96,7 @@
             <h3>Student Nurse Placement</h3>
             <p>Explore placement skills and specialist clinics for your future nursing practice.</p>
             <ul class="quiz-facts" aria-label="Quiz details"><li>6 topics</li><li>30 scenarios</li><li>NHS England</li></ul>
+            <p class="progress-summary" data-progress-summary="placement" hidden></p>
             <a class="btn" href="placement-quizzes.html">Explore placement quizzes <span aria-hidden="true">&rarr;</span></a>
           </div>
         </article>
@@ -99,6 +104,6 @@
       <section class="visit-note" aria-labelledby="visit-title"><h2 id="visit-title">Here for a careers visit?</h2><p>If you are visiting to explore careers, stay with your nominated supervisor and use approved areas only. The Nursing Shift Challenge is for careers exploration, not clinical guidance. Do not access patient information, photograph clinical areas or undertake patient care during a careers visit.</p></section>
     </section>
   </main>
-  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
+  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>Saved progress and scores stay in this browser only. Names, answers and reflection notes are not saved.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
 </body>
 </html>

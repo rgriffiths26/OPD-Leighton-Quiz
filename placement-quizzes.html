@@ -7,7 +7,8 @@
   <meta name="description" content="Explore six outpatient placement quizzes for student nurses, informed by NHS and NMC guidance.">
   <title>Student Nurse Placement | Mid Cheshire Hospitals</title>
   <script src="theme.js"></script>
-  <link rel="stylesheet" href="theme.css">
+  <script src="progress.js?v=progress-v2"></script>
+  <link rel="stylesheet" href="theme.css?v=progress-v2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -31,16 +32,35 @@
         <p>Explore the quizzes in any order.</p>
       </div>
       <div class="clinical-note"><strong>Learning scenarios.</strong> These quizzes support discussion, not clinical guidance or competency assessment. In practice, follow local policies, work within your competence and seek guidance from your supervisor.</div>
+      <section class="progress-panel" data-progress-panel data-progress-collection="placement" aria-label="Your quiz progress" hidden></section>
       <div class="staff-grid">
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">01 / Patient identification</p><h3>Specimen Detective</h3><p>Explore specimen identification, matching requests and speaking up about errors.</p><a class="btn" href="placement-quiz.html?quiz=specimens">Start specimen quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">02 / Preventing contamination</p><h3>Aseptic Practice</h3><p>Understand key parts and sites, preparation and recognising contamination.</p><a class="btn" href="placement-quiz.html?quiz=aseptic">Start aseptic practice quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">03 / Safe communication</p><h3>Documentation and Handover</h3><p>Practise factual records, secure access and structured handovers.</p><a class="btn" href="placement-quiz.html?quiz=handover">Start handover quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">04 / Comfort and recovery</p><h3>Wound Care and Aftercare</h3><p>Consider patient comfort, wound concerns and understandable aftercare.</p><a class="btn" href="placement-quiz.html?quiz=wounds">Start wound care quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">05 / Protecting people</p><h3>Safeguarding and Speaking Up</h3><p>Respond to concerns sensitively and seek the right support.</p><a class="btn" href="placement-quiz.html?quiz=safeguarding">Start safeguarding quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">06 / Future practice</p><h3>Specialist Clinic Journeys</h3><p>Explore patient experiences across different outpatient specialties.</p><a class="btn" href="placement-quiz.html?quiz=specialties">Start specialist clinics quiz <span aria-hidden="true">&rarr;</span></a></article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 01 / Patient identification</p><h3>Specimen Detective</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A specimen’s journey begins with the right patient, request and identification. Follow some fictional mix-ups and explore when to stop and ask for help.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:specimens" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=specimens">Start specimen quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 02 / Preventing contamination</p><h3>Aseptic Practice</h3></div>
+          <div class="staff-card-body"><p class="staff-description">Aseptic practice calls for careful preparation, awareness and teamwork. Explore how a student can recognise a possible break in technique and involve a supervisor.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:aseptic" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=aseptic">Start aseptic practice quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 03 / Safe communication</p><h3>Documentation and Handover</h3></div>
+          <div class="staff-card-body"><p class="staff-description">An accurate record and a clear handover help the wider team understand what has happened and what may be needed next. Think about factual notes, confidentiality and communication.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:handover" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=handover">Start handover quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 04 / Comfort and recovery</p><h3>Wound Care and Aftercare</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A patient’s comfort and understanding matter before, during and after wound care. Explore how to raise changes, ask questions and support clear aftercare with your supervisor.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:wounds" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=wounds">Start wound care quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 05 / Protecting people</p><h3>Safeguarding and Speaking Up</h3></div>
+          <div class="staff-card-body"><p class="staff-description">Sometimes a patient may say or show that something is not right. Explore how to listen sensitively, share concerns appropriately and find support when someone may be at risk.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:safeguarding" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=safeguarding">Start safeguarding quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 06 / Future practice</p><h3>Specialist Clinic Journeys</h3></div>
+          <div class="staff-card-body"><p class="staff-description">Outpatient nursing reaches across many specialties, each with its own patient journey. Explore communication, safe observation and learning with supervision in specialist clinics.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="placement:specialties" hidden></span></p><a class="btn" href="placement-quiz.html?quiz=specialties">Start specialist clinics quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
       </div>
     </section>
   </main>
-  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
+  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>Saved progress and scores stay in this browser only. Names, answers and reflection notes are not saved.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
 </body>
 </html>

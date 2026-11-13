@@ -101,15 +101,19 @@ test('invalid quiz positions are rejected', () => {
   }
 });
 
-function createQuizPage(dataFile, id, hasReflection = true) {
+function createQuizPage(dataFile, id, { hasReflection = true, hasInsights = true, hasKicker = true, hasInsightData = true, hasProgress = true } = {}) {
   const elements = new Map();
   const calls = [];
   const warnings = [];
+  const savedResults = [];
   const document = {
     title: 'Quiz',
+    body: { dataset: { quizCollection: dataFile === 'placement-quiz-data.js' ? 'placement' : 'staff' } },
     createElement,
     getElementById(name) {
       if (!hasReflection && (name === 'reflection-prompt' || name === 'reflection-notes')) return null;
+      if (!hasInsights && name === 'quiz-insights') return null;
+      if (!hasKicker && name === 'quiz-kicker') return null;
       if (!elements.has(name)) elements.set(name, createElement());
       return elements.get(name);
     }
@@ -120,6 +124,7 @@ function createQuizPage(dataFile, id, hasReflection = true) {
     return {
       children: [],
       classList: { add() {}, remove() {}, toggle() {} },
+      dataset: {},
       value: '',
       setAttribute() {},
       append(...children) { this.children.push(...children); },
@@ -134,14 +139,19 @@ function createQuizPage(dataFile, id, hasReflection = true) {
     document,
     location: { search: `?quiz=${id}` },
     URLSearchParams,
-    window: { celebrateQuizCompletion: (...args) => calls.push(args) },
+    window: {
+      celebrateQuizCompletion: (...args) => calls.push(args),
+      ...(hasProgress ? { quizProgress: { complete: (...args) => savedResults.push(args) } } : {})
+    },
     console: { warn: message => warnings.push(message) }
   });
   const data = fs.readFileSync(path.join(__dirname, '..', dataFile), 'utf8');
   const quizScript = fs.readFileSync(path.join(__dirname, '..', 'staff-quiz.js'), 'utf8');
-  vm.runInContext(`${data}\n${quizScript}`, context);
+  vm.runInContext(data, context);
   const quiz = vm.runInContext(`staffQuizzes[${JSON.stringify(id)}]`, context);
-  return { document, calls, quiz, warnings };
+  if (!hasInsightData) delete quiz.insights;
+  vm.runInContext(quizScript, context);
+  return { document, calls, quiz, warnings, savedResults };
 }
 
 function finishQuiz(page, correct) {
@@ -162,8 +172,15 @@ test('quiz results use their fixed position, including on replay and with differ
     for (const [id, position] of [[collection.last, 6], [collection.first, 1]]) {
       const page = createQuizPage(collection.data, id);
       assert.ok(page.document.getElementById('reflection-prompt').textContent.includes(page.quiz.title));
+      assert.equal(page.document.getElementById('quiz-intro').textContent, page.quiz.introduction);
+      assert.equal(page.document.getElementById('quiz-panel').dataset.quizPosition, String(position));
+      assert.match(page.document.getElementById('quiz-kicker').textContent, new RegExp(`Quiz 0${position}`));
+      const briefing = page.document.getElementById('quiz-insights').children;
+      assert.deepEqual(briefing.map(item => item.children.map(child => child.textContent)), Array.from(page.quiz.insights, item => Array.from(item)));
       finishQuiz(page, true);
       assert.deepEqual(page.calls, [[position, 6]]);
+      const collectionId = collection.data === 'placement-quiz-data.js' ? 'placement' : 'staff';
+      assert.deepEqual(page.savedResults, [[collectionId, id, 5, 5]]);
       assert.equal(page.document.getElementById('quiz-result').hidden, false);
       assert.equal(page.document.activeElement, page.document.getElementById('result-title'));
       const message = page.document.getElementById('result-score').textContent;
@@ -174,21 +191,31 @@ test('quiz results use their fixed position, including on replay and with differ
       page.document.getElementById('reflection-notes').value = 'Discuss this with my supervisor.';
       page.document.getElementById('quiz-retry').click();
       assert.equal(page.document.getElementById('reflection-notes').value, '');
+      assert.equal(page.savedResults.length, 1, 'Starting a retry should not change the saved result');
       finishQuiz(page, false);
       assert.deepEqual(page.calls, [[position, 6], [position, 6]]);
       assert.match(page.document.getElementById('result-score').textContent, /0 of 5 suggested answers/);
+      assert.deepEqual(page.savedResults, [[collectionId, id, 5, 5], [collectionId, id, 0, 5]]);
     }
   }
 });
 
-test('cached older quiz pages can still finish and replay without reflection fields', () => {
-  const page = createQuizPage('staff-quiz-data.js', 'clinic', false);
+test('cached older quiz pages can still finish and replay without newer elements', () => {
+  const page = createQuizPage('staff-quiz-data.js', 'clinic', { hasReflection: false, hasInsights: false, hasKicker: false, hasProgress: false });
   assert.match(page.warnings[0], /Reflection notes are unavailable/);
   finishQuiz(page, true);
   assert.equal(page.document.getElementById('quiz-result').hidden, false);
   page.document.getElementById('quiz-retry').click();
   finishQuiz(page, false);
   assert.deepEqual(page.calls, [[1, 6], [1, 6]]);
+});
+
+test('quiz pages remain usable with cached data that has no briefing points', () => {
+  const page = createQuizPage('placement-quiz-data.js', 'specimens', { hasInsightData: false });
+  assert.match(page.warnings[0], /Quiz background reading is unavailable/);
+  finishQuiz(page, true);
+  assert.equal(page.document.getElementById('quiz-result').hidden, false);
+  assert.deepEqual(page.calls, [[1, 6]]);
 });
 
 test('both quiz pages provide an associated private reflection notes field', () => {

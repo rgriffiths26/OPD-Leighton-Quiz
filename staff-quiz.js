@@ -21,10 +21,33 @@
   const feedback = byId('quiz-feedback');
   const reflectionPrompt = byId('reflection-prompt');
   const reflectionNotes = byId('reflection-notes');
+  const insights = byId('quiz-insights');
+  const kicker = byId('quiz-kicker');
+  const savedScore = byId('quiz-saved-score');
 
   document.title = `${quiz.title} | ${document.title}`;
   byId('quiz-title').textContent = quiz.title;
   byId('quiz-intro').textContent = quiz.introduction;
+  panel.dataset.quizPosition = String(position);
+  if (savedScore && document.body.dataset.quizCollection) {
+    savedScore.dataset.progressQuiz = `${document.body.dataset.quizCollection}:${id}`;
+  }
+  if (kicker) kicker.textContent = `Quiz ${String(position).padStart(2, '0')} / Student nurses · NHS England`;
+  if (insights) {
+    if (Array.isArray(quiz.insights)) {
+      for (const [heading, description] of quiz.insights) {
+        const item = document.createElement('article');
+        const title = document.createElement('h2');
+        const text = document.createElement('p');
+        title.textContent = heading;
+        text.textContent = description;
+        item.append(title, text);
+        insights.append(item);
+      }
+    } else {
+      console.warn('Quiz background reading is unavailable; reload the page to update it.');
+    }
+  }
   if (reflectionPrompt && reflectionNotes) {
     reflectionPrompt.textContent = `What is one thing from ${quiz.title} you would like to discuss with your supervisor or educator?`;
   } else {
@@ -103,6 +126,11 @@
         ? `Congratulations! You’ve completed quiz ${position} of ${quizIds.length}.`
         : `Quiz ${position} of ${quizIds.length} complete.`;
       byId('result-score').textContent = `${completion} You chose ${score} of ${quiz.questions.length} suggested answers.`;
+      if (window.quizProgress && document.body.dataset.quizCollection) {
+        window.quizProgress.complete(document.body.dataset.quizCollection, id, score, quiz.questions.length);
+      } else {
+        console.warn('Progress saving could not be loaded. This result is not saved.');
+      }
       byId('result-title').focus();
       if (typeof window.celebrateQuizCompletion === 'function') {
         window.celebrateQuizCompletion(position, quizIds.length);

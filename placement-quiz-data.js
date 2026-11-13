@@ -3,7 +3,12 @@
 const staffQuizzes = {
   specimens: {
     title: 'Specimen Detective',
-    introduction: 'Follow a fictional specimen journey and explore identification, safe checks and when to ask for help.',
+    introduction: 'A specimen’s journey begins with the right patient, request and identification. Follow some fictional mix-ups and explore when to stop and ask for help.',
+    insights: [
+      ['Identify the patient', 'Explore how patient and specimen details are checked and matched.'],
+      ['Follow the journey', 'A request, specimen site and transport arrangements can all matter.'],
+      ['Ask for help', 'Consider what to do when details do not match or a procedure is unfamiliar.']
+    ],
     sources: [
       ['HSSIB: Wrong patient details on a blood sample', 'https://www.hssib.org.uk/patient-safety-investigations/wrong-patient-details-on-blood-sample/'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
@@ -43,7 +48,12 @@ const staffQuizzes = {
   },
   aseptic: {
     title: 'Aseptic Practice',
-    introduction: 'Explore why aseptic practice matters and how a student can recognise and report contamination.',
+    introduction: 'Aseptic practice calls for careful preparation, awareness and teamwork. Explore how a student can recognise a possible break in technique and involve a supervisor.',
+    insights: [
+      ['Prepare together', 'Discuss the procedure, equipment and supervision before taking part.'],
+      ['Recognise concerns', 'Damaged packaging or an unexpected touch may need attention.'],
+      ['Keep the person involved', 'Patient comfort and communication matter throughout a procedure.']
+    ],
     sources: [
       ['NHS England: Infection prevention and control resources', 'https://www.england.nhs.uk/long-read/healthcare-associated-infection-hcai-compendium-of-guidance-and-resources/'],
       ['NHS England: National infection prevention and control manual', 'https://www.england.nhs.uk/infection-prevention-and-control/nipcm-for-england/']
@@ -83,7 +93,12 @@ const staffQuizzes = {
   },
   handover: {
     title: 'Documentation and Handover',
-    introduction: 'Practise clear, confidential records and structured communication as part of an outpatient team.',
+    introduction: 'An accurate record and a clear handover help the wider team understand what has happened and what may be needed next. Think about factual notes, confidentiality and communication.',
+    insights: [
+      ['Record clearly', 'Explore factual notes and what to do when an entry needs attention.'],
+      ['Hand over safely', 'A structured conversation can help communicate a concern and the support needed.'],
+      ['Protect access', 'Consider confidentiality and authorised access to clinical systems.']
+    ],
     sources: [
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/'],
       ['NHS: SBAR implementation and training guide', 'https://www.england.nhs.uk/improvement-hub/wp-content/uploads/sites/44/2017/11/SBAR-Implementation-and-Training-Guide.pdf']
@@ -123,7 +138,12 @@ const staffQuizzes = {
   },
   wounds: {
     title: 'Wound Care and Aftercare',
-    introduction: 'Consider comfort, changing wound concerns and understandable aftercare with a supervising practitioner.',
+    introduction: 'A patient’s comfort and understanding matter before, during and after wound care. Explore how to raise changes, ask questions and support clear aftercare with your supervisor.',
+    insights: [
+      ['Listen to the patient', 'Comfort and changes since the last visit are important to discuss with the team.'],
+      ['Learn with support', 'Explore dressing choices and questions with a supervising practitioner.'],
+      ['Plan for home', 'Consider how patients can understand their agreed aftercare and where to seek help.']
+    ],
     sources: [
       ['NICE: Information and advice on wound care (QS49)', 'https://www.nice.org.uk/guidance/qs49/chapter/quality-statement-5-information-and-advice-on-wound-care'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
@@ -163,7 +183,12 @@ const staffQuizzes = {
   },
   safeguarding: {
     title: 'Safeguarding and Speaking Up',
-    introduction: 'Explore how to listen, raise concerns and seek support when someone may be at risk.',
+    introduction: 'Sometimes a patient may say or show that something is not right. Explore how to listen sensitively, share concerns appropriately and find support when someone may be at risk.',
+    insights: [
+      ['Listen sensitively', 'A person may tell you or show you that something does not feel right.'],
+      ['Raise a concern', 'Explore how to involve the appropriate people and share information responsibly.'],
+      ['Keep speaking up', 'Consider where to seek further support if a serious concern remains unresolved.']
+    ],
     sources: [
       ['NHS England: Safeguarding in the NHS', 'https://www.england.nhs.uk/long-read/safeguarding-children-young-people-and-adults-at-risk-in-the-nhs/'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
@@ -203,7 +228,12 @@ const staffQuizzes = {
   },
   specialties: {
     title: 'Specialist Clinic Journeys',
-    introduction: 'Explore patient-centred learning across outpatient specialties and skills for future nursing practice.',
+    introduction: 'Outpatient nursing reaches across many specialties, each with its own patient journey. Explore communication, safe observation and learning with supervision in specialist clinics.',
+    insights: [
+      ['Different journeys', 'Explore fictional patient experiences across several outpatient specialties.'],
+      ['Support questions', 'Listening and involving the right clinician can help when a patient is unsure.'],
+      ['Learn respectfully', 'Consider patient choice, student involvement and supervision in specialist clinics.']
+    ],
     sources: [
       ['NHS: Biopsy', 'https://www.nhs.uk/tests-and-treatments/biopsy/'],
       ['NHS: Rheumatoid arthritis', 'https://www.nhs.uk/conditions/rheumatoid-arthritis/'],

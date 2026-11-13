@@ -7,7 +7,8 @@
   <meta name="description" content="Explore six outpatient nursing quiz topics, informed by NHS England and NMC guidance.">
   <title>Outpatient Nursing Essentials | Mid Cheshire Hospitals</title>
   <script src="theme.js"></script>
-  <link rel="stylesheet" href="theme.css">
+  <script src="progress.js?v=progress-v2"></script>
+  <link rel="stylesheet" href="theme.css?v=progress-v2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -31,16 +32,35 @@
         <p>Explore the quizzes in any order.</p>
       </div>
       <div class="clinical-note"><strong>Learning scenarios.</strong> These quizzes support discussion, not clinical guidance or competency assessment. In practice, follow local policies, work within your competence and seek guidance from your supervisor.</div>
+      <section class="progress-panel" data-progress-panel data-progress-collection="staff" aria-label="Your quiz progress" hidden></section>
       <div class="staff-grid">
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">01 / Working together</p><h3>A Busy Clinic Shift</h3><p>Prioritise a busy clinic, communicate delays and hand over concerns.</p><a class="btn" href="staff-quiz.html?quiz=clinic">Start clinic quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">02 / Patient safety</p><h3>Spotting Deterioration</h3><p>Recognise a change in condition and practise timely escalation.</p><a class="btn" href="staff-quiz.html?quiz=deterioration">Start deterioration quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">03 / Safer care</p><h3>Infection Prevention</h3><p>Explore hand hygiene, PPE and preparing equipment between patients.</p><a class="btn" href="staff-quiz.html?quiz=infection">Start infection prevention quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">04 / Respect and dignity</p><h3>Consent and Confidentiality</h3><p>Consider informed consent, privacy and appropriate information sharing.</p><a class="btn" href="staff-quiz.html?quiz=consent">Start consent quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">05 / Person-centred care</p><h3>Communication and Inclusion</h3><p>Support accessible information and compassionate conversations.</p><a class="btn" href="staff-quiz.html?quiz=communication">Start communication quiz <span aria-hidden="true">&rarr;</span></a></article>
-        <article class="staff-card"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">06 / Safer medicines</p><h3>Medicines Safety</h3><p>Think through medicine-related checks, uncertainty and reporting.</p><a class="btn" href="staff-quiz.html?quiz=medicines">Start medicines quiz <span aria-hidden="true">&rarr;</span></a></article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 01 / Working together</p><h3>A Busy Clinic Shift</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A clinic is about to start, priorities are changing and patients need updates. Explore how the team plans its work, hands over concerns and supports safe decisions.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:clinic" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=clinic">Start clinic quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 02 / Patient safety</p><h3>Spotting Deterioration</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A patient may become unwell in a busy waiting room, and a family member might notice a change first. Think about recognising concerns, seeking help and communicating clearly.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:deterioration" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=deterioration">Start deterioration quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 03 / Safer care</p><h3>Infection Prevention</h3></div>
+          <div class="staff-card-body"><p class="staff-description">Safe care depends on everyday details, from clean hands and protective equipment to preparing shared spaces. Explore what to consider before, during and between appointments.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:infection" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=infection">Start infection prevention quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 04 / Respect and dignity</p><h3>Consent and Confidentiality</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A patient has questions about a procedure or changes their mind. Explore how consent, privacy and appropriate information sharing support dignity and trust.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:consent" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=consent">Start consent quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 05 / Person-centred care</p><h3>Communication and Inclusion</h3></div>
+          <div class="staff-card-body"><p class="staff-description">Every patient communicates differently, especially when they need extra support to understand or be understood. Consider clear information, listening and reasonable adjustments.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:communication" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=communication">Start communication quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-card-top"><span class="heart-icon" aria-hidden="true"></span><p class="staff-kicker">Quiz 06 / Safer medicines</p><h3>Medicines Safety</h3></div>
+          <div class="staff-card-body"><p class="staff-description">A medicine list, an allergy record or an unclear instruction can raise questions during a clinic. Explore how students can recognise uncertainty, seek support and speak up.</p><p class="staff-meta">Briefing + 5 challenges <span class="progress-badge" data-progress-quiz="staff:medicines" hidden></span></p><a class="btn" href="staff-quiz.html?quiz=medicines">Start medicines quiz <span aria-hidden="true">&rarr;</span></a></div>
+        </article>
       </div>
     </section>
   </main>
-  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>No names, scores or responses are collected.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
+  <footer class="hub-footer"><div><strong>Quiz hub</strong><p>Saved progress and scores stay in this browser only. Names, answers and reflection notes are not saved.</p></div><a href="https://www.mcht.nhs.uk/">Visit the Trust website &rarr;</a></footer>
 </body>
 </html>

@@ -3,7 +3,12 @@
 const staffQuizzes = {
   clinic: {
     title: 'A Busy Clinic Shift',
-    introduction: 'Practise prioritising, communicating and handing over safely during a fictional outpatient clinic.',
+    introduction: 'A clinic is about to start, priorities are changing and patients need updates. Explore how the team plans its work, hands over concerns and supports safe decisions.',
+    insights: [
+      ['Plan together', 'A briefing helps the team understand the clinic plan, responsibilities and changing priorities.'],
+      ['Respond to change', 'A delayed appointment and a patient who feels worse may need different responses.'],
+      ['Know your limits', 'Consider clear handovers and the supervision needed when a task is unfamiliar.']
+    ],
     sources: [
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
     ],
@@ -42,7 +47,12 @@ const staffQuizzes = {
   },
   deterioration: {
     title: 'Spotting Deterioration',
-    introduction: 'Recognise a change in condition, listen to concerns and practise timely escalation in an outpatient setting.',
+    introduction: 'A patient may become unwell in a busy waiting room, and a family member might notice a change first. Think about recognising concerns, seeking help and communicating clearly.',
+    insights: [
+      ['Notice changes', 'A patient, relative or colleague may notice a change from what is usual for that person.'],
+      ['Seek support', 'Explore when to raise a concern and what information helps the receiving clinician.'],
+      ['Keep communicating', 'Consider what to do if a concern continues or the patient becomes more unwell.']
+    ],
     sources: [
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/'],
       ['NHS England: Managing acute physical deterioration', 'https://www.england.nhs.uk/patient-safety/managing-acute-physical-deterioration-through-the-prevention-identification-escalation-response-pier-approach/']
@@ -82,7 +92,12 @@ const staffQuizzes = {
   },
   infection: {
     title: 'Infection Prevention',
-    introduction: 'Explore hand hygiene, protective equipment and safe preparation between patients.',
+    introduction: 'Safe care depends on everyday details, from clean hands and protective equipment to preparing shared spaces. Explore what to consider before, during and between appointments.',
+    insights: [
+      ['Clean hands', 'Hand hygiene matters when moving between patients, equipment and tasks.'],
+      ['Prepare safely', 'Consider protective equipment and reusable items for each activity.'],
+      ['Speak up', 'Explore what to do when symptoms, equipment or the environment raise concerns.']
+    ],
     sources: [
       ['NHS England: National infection prevention and control manual', 'https://www.england.nhs.uk/infection-prevention-and-control/nipcm-for-england/'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
@@ -122,7 +137,12 @@ const staffQuizzes = {
   },
   consent: {
     title: 'Consent and Confidentiality',
-    introduction: 'Consider informed consent, dignity and safe information sharing in everyday outpatient situations.',
+    introduction: 'A patient has questions about a procedure or changes their mind. Explore how consent, privacy and appropriate information sharing support dignity and trust.',
+    insights: [
+      ['Choice matters', 'A patient may have questions about a procedure or change their mind.'],
+      ['Protect privacy', 'Consider where and with whom patient information is discussed.'],
+      ['Ask for support', 'Explore how the team can help when a decision or information-sharing request is unclear.']
+    ],
     sources: [
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
     ],
@@ -161,7 +181,12 @@ const staffQuizzes = {
   },
   communication: {
     title: 'Communication and Inclusion',
-    introduction: 'Practise inclusive conversations, accessible information and compassionate support in outpatient clinics.',
+    introduction: 'Every patient communicates differently, especially when they need extra support to understand or be understood. Consider clear information, listening and reasonable adjustments.',
+    insights: [
+      ['Listen first', 'People may have different concerns and ways they prefer to communicate.'],
+      ['Make information clear', 'Explore plain language, interpretation and ways to check understanding.'],
+      ['Include everyone', 'Consider communication support and reasonable adjustments for individual needs.']
+    ],
     sources: [
       ['NHS England: Accessible Information Standard', 'https://www.england.nhs.uk/long-read/accessible-information-standard-requirements-dapb1605/'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
@@ -201,7 +226,12 @@ const staffQuizzes = {
   },
   medicines: {
     title: 'Medicines Safety',
-    introduction: 'Explore medicine-related communication, checks, uncertainty and reporting in an outpatient setting.',
+    introduction: 'A medicine list, an allergy record or an unclear instruction can raise questions during a clinic. Explore how students can recognise uncertainty, seek support and speak up.',
+    insights: [
+      ['Look at the details', 'An instruction, medicines list or allergy record may need clarification.'],
+      ['Work with your supervisor', 'Think about your role and where to find appropriate medicines support.'],
+      ['Speak up', 'Explore how to raise a discrepancy, error or near miss with the team.']
+    ],
     sources: [
       ['NICE: Medicines optimisation (NG5)', 'https://www.nice.org.uk/guidance/ng5'],
       ['NMC: The Code', 'https://www.nmc.org.uk/standards/code/read-the-code-online/']
