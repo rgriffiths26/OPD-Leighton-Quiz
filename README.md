@@ -17,6 +17,7 @@ A static, GitHub Pages-compatible nursing quiz hub for careers exploration and o
 - `staff-quiz.js`: shared interaction for both collections.
 - `celebration.js`: short, accessible confetti celebrations based on a quiz's position in its collection.
 - `progress.js`: browser-only completion marks and latest scores, saving controls and reset across all three collections.
+- `quiz-hub-intro.mp4` and `quiz-hub-intro-poster.svg`: the homepage introduction video and its preview image.
 - `theme.css`: shared NHS blue, dark blue and pink styling inspired by the [Mid Cheshire Hospitals website](https://www.mcht.nhs.uk/).
 - `theme.js`: light/dark theme selection shared across pages.
 

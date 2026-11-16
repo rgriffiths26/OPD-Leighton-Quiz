@@ -71,6 +71,14 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 .hero-note h2 { font-size: 19px; line-height: 1.2; margin: 8px 0; letter-spacing: -.02em; }
 .hero-note p { color: #eaf2f9; font-size: 14px; margin: 0; }
 .note-bottom { border-top: 1px solid #547ab8; padding-top: 8px; margin-top: 10px; display: flex; gap: 20px; font-size: 12px; }
+.hub-intro { max-width: 1160px; margin: auto; padding: 28px 32px 0; }
+.hub-intro-card { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); overflow: hidden; border: 1px solid var(--line); border-top: 4px solid var(--teal); border-radius: 10px; background: var(--sky); }
+.hub-intro-copy { padding: clamp(20px, 3vw, 32px); }
+.hub-intro-copy .heart-icon { float: right; width: 36px; height: 36px; background-color: var(--teal); background-size: 22px; margin-left: 12px; }
+.hub-intro-copy .eyebrow { color: var(--teal); margin: 0 0 8px; }
+.hub-intro-copy h2 { color: var(--navy); font-size: clamp(23px, 2.5vw, 30px); line-height: 1.2; margin: 0 0 10px; }
+.hub-intro-copy p:last-child { color: var(--muted); margin: 0; }
+.hub-intro video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #101c2a; }
 .hub-content { max-width: 1160px; margin: auto; padding: 52px 32px 64px; }
 #quizzes { scroll-margin-top: 24px; }
 .hub-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; }
@@ -259,6 +267,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 [data-theme="dark"] .placement-collection-art { background: #382d4a; }
 [data-theme="dark"] .quiz-art svg { color: #9dc5ef; }
 [data-theme="dark"] .hub-section-heading h2,
+[data-theme="dark"] .hub-intro-copy h2,
 [data-theme="dark"] .quiz-card h3,
 [data-theme="dark"] .quiz-facts,
 [data-theme="dark"] .future-note h3,
@@ -268,6 +277,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 [data-theme="dark"] .module h2,
 [data-theme="dark"] .insight h3 { color: #d7eaff; }
 [data-theme="dark"] .hub-section-heading .eyebrow,
+[data-theme="dark"] .hub-intro-copy .eyebrow,
 [data-theme="dark"] .module-heading .kicker,
 [data-theme="dark"] .q-type,
 [data-theme="dark"] .result .big,
@@ -338,6 +348,8 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
   .site-header .inner { padding: 12px 16px; gap: 12px; }
   .trust-logo { width: 185px; min-width: 0; }
   .site-nav a { padding: 8px 7px; font-size: 12px; }
+  .hub-intro { padding: 24px 20px 0; }
+  .hub-intro-card { grid-template-columns: 1fr; }
   .hub-content { padding: 32px 20px 40px; }
   .quiz-card { grid-template-columns: 1fr; }
   .quiz-art { min-height: 0; flex-direction: row; gap: 12px; padding: 14px 18px; }
@@ -366,7 +378,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible {
 }
 @media print {
   .progress-panel { display: none !important; }
-  .site-header, .site-nav, .quiz-breadcrumb, .skip-link, .hub-footer, .hero-button, .confetti-layer { display: none !important; }
+  .site-header, .site-nav, .quiz-breadcrumb, .skip-link, .hub-footer, .hero-button, .confetti-layer, .hub-intro { display: none !important; }
   .hub-hero, .hero-note { background: white; color: black; }
   .hub-hero p, .hub-hero .eyebrow, .hero-note p, .note-label { color: black; }
   [data-theme="dark"] body, [data-theme="dark"] .module, [data-theme="dark"] .insight, [data-theme="dark"] .scenario, [data-theme="dark"] .reflection, [data-theme="dark"] .stretch { background: white; color: black; }

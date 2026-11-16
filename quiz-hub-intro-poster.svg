@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#005eb8"/>
+  <circle cx="1120" cy="170" r="290" fill="#176fbe"/>
+  <circle cx="90" cy="710" r="250" fill="#004b9b"/>
+  <text x="90" y="215" fill="#ffb81c" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="5">INTRODUCING</text>
+  <text x="85" y="335" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="700">Quiz Hub</text>
+  <path d="M92 395v115" stroke="#ffb81c" stroke-width="6" stroke-linecap="round"/>
+  <text x="115" y="440" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="38">A little curiosity.</text>
+  <text x="115" y="495" fill="#ffb81c" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">A whole world of care.</text>
+  <circle cx="1010" cy="365" r="82" fill="#fff"/>
+  <path d="M989 320v90l66-45z" fill="#005eb8"/>
+</svg>
